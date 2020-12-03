@@ -1,5 +1,7 @@
 {
   "name": "perpusku",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

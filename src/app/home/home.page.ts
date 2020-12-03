@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { HomeUserPage } from '../home-user/home-user.page';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,19 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    public router: Router,
+    public modalController: ModalController
+  ) 
+  {}
 
+  async homeuser() {
+    const modal = await this.modalController.create({
+      component: HomeUserPage,
+      cssClass: 'my-custom-class'
+    });
+    return await modal.present();
+  }
 }
+
+
